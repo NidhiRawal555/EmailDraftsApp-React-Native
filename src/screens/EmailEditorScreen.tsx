@@ -51,7 +51,7 @@ const EmailEditorScreen = ({ route, navigation }: any) => {
     try {
       const emailData = {
         personalizations: [{ to: [{ email: recipient }] }],
-        from: { email: 'your-email@example.com' },
+        from: { email: 'nidhirawal555@gmail.com' },
         subject: subject,
         content: [{ type: 'text/plain', value: body }],
       };
@@ -59,7 +59,7 @@ const EmailEditorScreen = ({ route, navigation }: any) => {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          Authorization: `Bearer YOUR_SENDGRID_API_KEY`, // Replace with your actual SendGrid API key
+          Authorization: `Bearer YOUR_SENDGRID_API_KEY`, // Replace with my actual SendGrid API key
         },
         body: JSON.stringify(emailData),
       });
