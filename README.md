@@ -1,5 +1,6 @@
-Readme text here# My Email App
+https://github.com/user-attachments/assets/c0f0b322-9b40-43cc-b22a-0db4451044a5
 
+My Email App
 This is a React Native app built using Expo for managing email drafts. Users can create, edit, save, and send email drafts, and their drafts are stored locally using `AsyncStorage`. The app integrates with the SendGrid API to send emails.
 
 ## Features
