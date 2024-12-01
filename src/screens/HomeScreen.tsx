@@ -10,7 +10,7 @@ const HomeScreen = ({ navigation }: any) => {
   const dispatch = useDispatch();
   const drafts = useSelector((state: RootState) => state.email.drafts);
 
-  const [isLoggedIn, setIsLoggedIn] = useState(false); // State to track if the user is logged in
+  const [isLoggedIn, setIsLoggedIn] = useState(false); 
 
   useEffect(() => {
     // Load drafts from AsyncStorage and set them in Redux
@@ -34,12 +34,12 @@ const HomeScreen = ({ navigation }: any) => {
 
   const handleLogout = async () => {
     try {
-      await AsyncStorage.removeItem('isLoggedIn'); // Remove the login status
-      await AsyncStorage.removeItem('drafts'); // Clear drafts from AsyncStorage
-      dispatch(setDrafts([])); // Reset drafts in Redux
-      setIsLoggedIn(false); // Set login state to false
+      await AsyncStorage.removeItem('isLoggedIn');
+      await AsyncStorage.removeItem('drafts'); 
+      dispatch(setDrafts([])); 
+      setIsLoggedIn(false); 
       Alert.alert('Logged Out', 'You have been logged out and drafts cleared.');
-      navigation.navigate('Home'); // Navigate to Home screen after logging out
+      navigation.navigate('Home'); 
     } catch (error) {
       Alert.alert('Error', 'An error occurred while logging out.');
     }
@@ -47,8 +47,8 @@ const HomeScreen = ({ navigation }: any) => {
 
   const handleLogin = async () => {
     // Simulate login process (You can replace this with actual login functionality)
-    await AsyncStorage.setItem('isLoggedIn', 'true'); // Save login status in AsyncStorage
-    setIsLoggedIn(true); // Update login state in the app
+    await AsyncStorage.setItem('isLoggedIn', 'true'); 
+    setIsLoggedIn(true); 
     Alert.alert('Logged In', 'You are now logged in.');
   };
 
@@ -66,18 +66,18 @@ const HomeScreen = ({ navigation }: any) => {
     <View style={{ padding: 20 }}>
       {isLoggedIn ? (
         <>
-          {/* Show Create New Draft button only if user is logged in */}
+         
           <Button mode="contained" onPress={() => navigation.navigate('EmailEditor')} style={{ marginBottom: 20 }}>
             Send Email
           </Button>
 
-          {/* Show Logout button if user is logged in */}
+  
           <Button mode="outlined" onPress={handleLogout} style={{ marginBottom: 20 }}>
             Logout
           </Button>
         </>
       ) : (
-        // Show Login button if user is not logged in
+   
         <Button mode="contained" onPress={handleLogin} style={{ marginBottom: 20 }}>
           Login
         </Button>
